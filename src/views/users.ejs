@@ -1,0 +1,26 @@
+<%- include('header') -%>
+
+<div class="main container row">
+    <div class="col-md-6">
+        <h1 class="display-4 m-b-2 text-center">Search for Users</h1>
+        <div class="form-group">
+            <input class="form-control" id="searchfield" type="text" name="search" placeholder="Search." onkeyup="searchuser();"/>
+        </div>
+        <div id="outer-div-search">
+            <div class="row" id="row-search">
+                <% userList.forEach(function(user, i) { %>
+                    <a href="/users/@<%= user.name %>">
+                        <div class="card mb-3 bg-dark">
+                            <div class="card-header" id="user-name">@<%= user.name %></div>
+                            <div class="card-body">
+                                <p class="card-text"><small class="text-muted" id="user-mail"><%= user.email %></small></p>
+                            </div>
+                        </div>   
+                    </a>
+                <% }); %>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('footer') -%>

@@ -1,0 +1,52 @@
+<%- include('header') -%>
+
+<div class="main jumbotron my-0">
+    <div class="container col-md-6">
+        <!-- Add Event Form-->
+        <form method="POST" action="/edit/<%= comp.url %>" enctype="multipart/form-data">
+            <h1 class="display-4">Edit Event : <%= comp.name %></h1>
+            <hr class="my-4">
+            <div class="form-group">
+                <label for="eventName">Event Name</label>
+                <input class="form-control form-control-lg" id="eventName" type="text" value="<%= comp.name %>" name="eventName" required/>
+            </div>
+            <div class="form-group">
+                <label for="eventImg">Image</label>
+                <input class="form-control-file" id="eventImg" type="file" name="eventImg">
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="eventDate">Event Date</label>
+                    <input class="form-control" id="eventDate" value="<%= moment(comp.date).format('YYYY-MM-DD') %>" type="date" name="eventDate"/>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="eventType">Event Type</label>
+                    <select class="form-control" id="eventType" value="<%= comp.type %>" name="eventType">
+                        <option>Infotech</option>
+                        <option>MUN</option>
+                        <option>Confenrence</option>
+                        <option>Wokrkshops</option>
+                    </select>
+                    <script>
+                        document.getElementById('eventType').value = "<%= comp.type %>";
+                    </script>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="eventVenue">Event Venue</label>
+                <input class="form-control" id="eventVenue" type="text" value="<%= comp.venue %>" name="eventVenue" required/>
+            </div>
+            <div class="form-group">
+                <label for="eventDetails">Event Details</label>
+                <textarea  class="form-control" id="eventDetails" type="text" name="eventDetails" rows="6" required><%= comp.details %></textarea>
+            </div>
+
+            <div class="form-group my-4">
+                <button class="btn btn-primary" type="submit">Edit Event</button>
+                <a class="btn btn-danger" href="/delete/<%= comp.url %>">Delete Event</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<%- include('footer') -%>

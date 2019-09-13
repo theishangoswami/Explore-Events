@@ -1,0 +1,48 @@
+<%- include('header') -%>
+
+<div class="main">
+    <div class="jumbotron jumbotron-fluid text-center">
+        <div class="container">
+            <h1 class="display-4 index-head">ExploreEvents.org</h1>
+            <p class="text-muted">Learn about all upcoming events</p>
+        </div>
+    </div>
+
+    <div id="events-boxes">
+        <div class="container">
+            <div class="row">
+            
+                <% compList.forEach(function(comp, i) { %>
+                    <a class="card-a">
+                        <div class="card m-4" style="width: 24rem;">
+                            <div class="card-header"><span class="h5 bold"><strong><%= comp.name %></strong></span><span class="float-right event-type"><%= comp.type %></span></div>
+                            <img class="img-fluid card-img-top mb-5" src="<%= comp.img %>" alt="<%= comp.name %>">
+                            <!--<div class=""><%= moment(comp.dateFrom).format("Do MMMM YYYY") %> to <%= moment(comp.dateTo).format("Do MMMM YYYY") %></p>
+                            <div class="float-right">
+                                <span><%= comp.venue %></span>
+                                <span><%= comp.org %></span>
+                            </p>-->
+                            <div class="row event-row">
+                                <div class="col-sm-2">
+                                    <p class="month"><%= moment(comp.dateFrom).format("MMM") %> %></p>
+                                    <p class="date"><%= moment(comp.dateFrom).format("DD") %> %></p>
+                                </div>
+                                <div class="col-sm-10 pl-4">
+                                    <p class="organizer"><%= comp.org %></p>
+                                    <p class="text-muted"><%= moment(comp.dateFrom).format("Do MMMM YYYY") %> to <%= moment(comp.dateTo).format("Do MMMM YYYY") %></p>
+                                    <p class="text-muted venue"><%= comp.venue %></p>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <a href="/events/<%= comp.url %>" class="btn btn-primary">View Event</a>
+                            </div>
+                        </div>
+                    </a>
+                <% }); %>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('footer') -%>

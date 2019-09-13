@@ -1,0 +1,97 @@
+<%- include('header') -%>
+
+<div class="main jumbotron my-0">
+    <div class="container col-md-6">
+        <!-- Add Event Form-->
+        <form method="POST" action="/addEvent" enctype="multipart/form-data">
+            <h1 class="display-4">Add Event</h1>
+            <hr class="my-4">
+            <div class="form-group">
+                <label for="eventName">Event Name</label>
+                <input class="form-control form-control-lg" id="eventName" type="text" placeholder="Name of the Event" name="eventName" required/>
+            </div>
+            <div class="form-group">
+                <label for="eventOrg">Event Organizer</label>
+                <input class="form-control form-control-lg" id="eventOrg" type="text" placeholder="Organizer of the Event" name="eventOrg" required/>
+            </div>
+            <div class="form-group">
+                <label for="eventImg">Image</label>
+                <input class="form-control-file" id="eventImg" type="file" name="eventImg" required>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="eventDateFrom">Date From</label>
+                    <input class="form-control" id="eventDateFrom" type="date" name="eventDateFrom" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="eventDateTo">Date To</label>
+                    <input class="form-control" id="eventDateTo" type="date" name="eventDateTo" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="eventType">Event Type</label>
+                <select class="form-control" id="eventType" name="eventType" required>
+                    <option>Infotech</option>
+                    <option>Science</option>
+                    <option>School Competition</option>
+                    <option>Causes</option>
+                    <option>Cultural</option>
+                    <option>Conference</option>
+                    <option>Model United Nations</option>
+                    <option>Workshops</option>
+                    <option>Gaming</option>
+                    <option>Networking</option>
+                    <option>Sports</option>
+                    <option>Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="eventVenue">Venue</label>
+                <input class="form-control" id="eventVenue" type="text" placeholder="Venue (Only Place Name and the City)" name="eventVenue" required/>
+                <small class="form-text text-muted"></small>
+            </div>
+            <div>
+                <h3 class="mt-5 mb-3">Contact</h3>
+                <hr class="my-4">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="eventContact">Contact Number</label>
+                        <input class="form-control" id="eventContact" type="tel" placeholder="Contact Number of the Host" name="eventContact" required/>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="eventMail">Organizeer Mail</label>
+                        <input class="form-control" id="eventMail" type="email" placeholder="Email of the Host" name="eventMail" required/>
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="eventFB">Facebook Page</label>
+                    <input class="form-control" id="eventFB" type="url" placeholder="Facebook Page of the Event" name="eventFB" required/>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="eventWeb">Website Link</label>
+                    <input class="form-control" id="eventWeb" type="url" placeholder="Wesbite of the Event" name="eventWeb"/>
+                </div>
+            </div>
+            <div>
+                <h3 class="mt-5 mb-3">Event Description</h3>
+                <hr class="my-4">
+                <div class="form-group">
+                    <label for="eventOverview">Event Overview</label>
+                    <textarea  class="form-control" id="eventOverview" type="text" placeholder="Overview of the Event" name="eventOverview" rows="6" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="eventDetails">Event Details</label>
+                    <textarea  class="form-control" id="eventDetails" type="text" placeholder="Extra Details about the Event" name="eventDetails" rows="6" required></textarea>
+                </div>
+            </div>
+
+            <div class="form-group my-4">
+                <button class="btn btn-primary" type="submit">Add Event</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<%- include('footer') -%>

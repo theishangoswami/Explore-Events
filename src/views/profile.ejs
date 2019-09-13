@@ -1,0 +1,40 @@
+<%- include('header') -%>
+
+<div class="main">
+    <div class="jumbotron">
+        <div class="container">
+            <h2>About User</h2>
+            <hr class="my-4">
+            <h3><%= user.name %></h3>
+            <h4><%= user.email %></h4>
+        </div>
+    </div>
+    <div class="container">
+        <h2>User's Events</h2>
+        <hr class="my-4">
+        <div class="row">
+            <% if(! (compList && compList.length)) { %>
+                <p>This user has made no events.</p>
+            <% } else { %>
+                <% compList.forEach(function(comp, i) { %>
+                    <div class="card m-4 shadow" style="width: 18rem;">
+                        <img class="img-fluid card-img-top" src="<%= comp.img %>" alt="<%= comp.name %>">
+                        <div class="card-body">
+                            <h5 class="card-title"><%= comp.name %></h5>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><%= moment(comp.date).format("dddd, Do MMMM YYYY") %></li>
+                            <li class="list-group-item"><%= comp.venue %></li>
+                            <li class="list-group-item"><%= comp.type %></li>
+                        </ul>
+                        <div class="card-body">
+                            <a href="/events/<%= comp.url %>" class="btn btn-primary">View Event</a>
+                        </div>
+                    </div>
+                <% }); %>
+            <% } %>
+        </div>
+    </div>
+</div>
+
+<%- include('footer') -%>

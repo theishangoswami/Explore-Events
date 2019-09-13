@@ -1,0 +1,194 @@
+/* Fonts */ 
+@import url('https://fonts.googleapis.com/css?family=Comfortaa:300,400,700');
+@font-face {
+  font-family: "Sailec";
+  font-weight: normal;
+  src: url("/fonts/Sailec.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Sailec";
+  font-weight: bold;
+  src: url("/fonts/Sailec-Bold.woff2") format("woff2");
+}
+
+
+
+/* Stuff */
+body {
+  font-family: "Comfortaa";
+}
+.row {
+  justify-content: center;
+}
+.hidden {
+  display: none;
+}
+
+/* Landing Page */
+.hero {
+  background: linear-gradient(#2178f3, #fff);
+  font-family: 'Sailec', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-weight: bold;
+  font-size: 9vh;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: #ffffff;
+}
+.hero > * {
+  margin: 0;
+}
+.hero .btn-hero {
+  margin-bottom: 4rem;
+  margin-top: auto;
+}
+.hero p {
+  z-index: 100;
+  margin: -1vw;
+}
+.top-hero {
+  position: absolute;
+}
+.hero .top-hero {
+  z-index: 100;
+  margin: -1vw;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+/* Form */
+.sign-main {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #f5f5f5;
+}
+form.sign {
+  width: 100%;
+  max-width: 330px;
+  margin: 0 auto;
+}
+form.sign .form-control {
+  position: relative;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+}
+
+
+/* Event */
+.event-head {
+  margin-bottom: 0;
+  padding-bottom: 2rem;
+}
+
+/* Index */
+.index-head {
+  font-size: 2.2rem;
+}
+.navbar {
+  padding: 0.6rem 1rem;
+}
+.navbar-toggler {
+  border: none;
+}
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,<svg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'><path stroke='rgba(255, 255, 255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/></svg>") !important;
+}
+
+/* Events */
+.card span.event-type {
+  margin-top: 0.5px;
+}
+.event-row {
+  display: flex;
+  margin: 0;
+}
+.event-row p {
+  margin: 0;
+}
+.event-row .text-muted {
+  font-size: 10px;
+}
+.event-row .organizer {
+  font-size: 17px;
+}
+.event-row .col-sm-2 {
+  padding: 0;
+  flex: 0 0 16.6666666667%;
+  max-width: 16.6666666667%;
+}
+.event-row .col-sm-10 {
+  padding: 0;
+  flex: 0 0 83.3333333333%;
+  max-width: 0 0 83.3333333333%;
+
+}
+.event-row .venue {
+  font-size: 13px;
+}
+.event-row .col-sm-2 {
+  text-align: center;
+  font-size: 17px;
+}
+.event-row .month {
+  color: #f00;
+}
+.event-row .card-a::hover {
+  cursor: progress;
+}
+
+/* Event Profile */
+.col-md-6 .flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* MARKETING CONTENT */
+.marketing .col-lg-4 {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+.marketing h2 {
+  font-weight: 400;
+}
+.marketing .col-lg-4 p {
+  margin-right: .75rem;
+  margin-left: .75rem;
+}
+
+
+/* Featurettes */
+.featurette-divider {
+  margin: 5rem 0;
+}
+.featurette-heading {
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -.05rem;
+}
+
+/* RESPONSIVE CSS */
+@media (min-width: 40em) {
+  .featurette-heading {
+    font-size: 50px;
+  }
+}
+@media (min-width: 62em) {
+  .featurette-heading {
+    margin-top: 7rem;
+  }
+}
+
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 812px) { 
+    .hero { 
+      font-size: 5vh;
+    }
+}

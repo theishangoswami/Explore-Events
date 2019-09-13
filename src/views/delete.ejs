@@ -1,0 +1,16 @@
+<%- include('header') -%>
+
+<div class="main jumbotron">
+    <div class="text-center">
+        <i class="material-icons mb-4">error</i>
+        <h5>Are you sure you want to delete the event : <%= comp.name %></h5>
+        <form method="POST" action="/delete/<%= comp.url %>">
+            <div class="form-group">
+                <button class="btn btn-danger" type="submit">Yes</button>
+                <a class="btn btn-primary" href="/events/<%= comp.url %>">No</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<%- include('footer') -%>

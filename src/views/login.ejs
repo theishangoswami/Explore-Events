@@ -1,0 +1,21 @@
+<%- include('sign-header') -%>
+
+<body>
+    <div class="main sign-main">
+        <form class="mx-auto sign" method="POST" action="/login">
+            <h3 class="text-center mb-5 display-4">Please sign in</h3>
+            <div class="form-group">
+                <input class="form-control" id="name" type="text" placeholder="Enter username" name="name" required/>
+                <input class="form-control" id="password" type="password" placeholder="Enter password" name="password" required/>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-lg btn-primary btn-block" type="submit">Log in</button>
+            </div>
+            <div class="form-group">
+                <a href="/register" class="btn btn-dark btn-block">Create an Account</a>
+            </div>
+            <p class="mt-5 mb-3 text-muted text-center">© 2017-2018</p>
+        </form>
+    </div>
+
+<%- include('sign-footer') -%>

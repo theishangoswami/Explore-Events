@@ -1,0 +1,69 @@
+<%- include('header') -%>
+
+<div class="main jumbotron bg-light event-head">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <% if(creator._id == userId) { %>
+                    <div class="flex">
+                        <a class="btn btn-primary col-md-4 mb-3 btn-sm" href="/edit/<%= comp.url %>"><i class="material-icons">create</i></a>
+                        <a class="btn btn-danger col-md-4 mb-3 btn-sm" href="/delete/<%= comp.url %>"><i class="material-icons">delete</i></a>
+                    </div>
+                <% } %>
+                <div>
+                    <h2><%= comp.name %></h2>
+                </div>
+                <img class="img-fluid img-thumbnail mb-3" src="<%= comp.img %>" alt="<%= comp.name %>" width="100%">
+                <p class="text-muted">Hosted by <strong><%= comp.org %></strong>.</p>
+                <hr class="mt-4">
+            </div>
+            <div class="col-md-6">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Event Type:
+                        <span><%= comp.type %></span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Venue:
+                        <span><%= comp.venue %></span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Date:
+                        <span><%= moment(comp.dateFrom).format("Do MMMM") %> to <%= moment(comp.dateTo).format("Do MMMM") %></span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        E-Mail:
+                        <span><a href="mailto:<%= comp.mail %>"><%= comp.mail %></a></span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Phone Number:
+                        <span><a href="tel:<%= comp.contact %>"><%= comp.contact %></a></span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Facebook:
+                        <span><a href="<%= comp.fb %>"><%= comp.fb %></a></span>
+                    </li>
+                    <% if (comp.web) { %>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Website:
+                            <span><a href="<%= comp.fb %>"><%= comp.web %></a></span>
+                        </li>
+                    <% } %>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="main jumbotron">
+    <div class="container">
+        <h4>Overview</h4>
+        <p><%= comp.overview %></p>
+        <hr class="my-4">
+        <h4>Details</h4>
+        <p><%= comp.details %></p>
+        <hr class="my-4">
+    </div>
+</div>
+
+<%- include('footer') -%>
