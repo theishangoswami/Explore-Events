@@ -31,4 +31,6 @@ I wish to contribute my part, in making the world a better place.
 
 Please note that this uses the `sessions` and `users` collection in the `events` database. If you are already using that, make a new database cluster.
 
-Project made with duttaditya18.
+## Authors
+
+Ishan Goswami & Aditya Dutt.
